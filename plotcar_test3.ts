@@ -306,10 +306,10 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    if (L_zengo >= PremotionL && L_zengo == 1){
+    if (L_zengo <= PremotionL && L_zengo == 1){
          Tugi_L=(Tugi_L + Step_number)%4;
     }
-    if (L_zengo < PremotionL && L_zengo == 1){
+    if (L_zengo > PremotionL && L_zengo == 1){
          Tugi_L=(Tugi_L - Step_number)%4;
     }  
     Tugi_R = (Tugi_R + Step_number)%4;
