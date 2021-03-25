@@ -2,8 +2,8 @@ let wait = 0;
 let  Tugi_R=0;
 let Tugi_L=0;
 let T1=0;
-let  PremotionR :number;
-let  PremotionL :number;
+let  PremotionR=0 ;
+let  PremotionL=0 ;
 
 enum pen_onoff {
   up,
@@ -306,12 +306,12 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    if (L_zengo == 1){
+    if (L_zengo >= PremotionL && L_zengo == 1){
          Tugi_L=(Tugi_L + Step_number)%4;
     }
-    if (L_zengo == 2){
+    if (L_zengo < PremotionL && L_zengo == 1){
          Tugi_L=(Tugi_L - Step_number)%4;
-    }    
+    }  
     Tugi_R = (Tugi_R + Step_number)%4;
     serial.writeValue("step_number", Step_number);
     PremotionR = R_zengo;
