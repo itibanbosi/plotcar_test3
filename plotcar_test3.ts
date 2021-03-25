@@ -189,7 +189,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 /*
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
-            Stepping_R[a-tugi_iti,b] = SteppingF_1[a,4-b];
+            Stepping_R[a-tugi_iti,b] = SteppingB_1[a,4-b];
             }
         }
 */
@@ -205,7 +205,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         Stepping_L=SteppingF_0
 /*        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
-            Stepping_L[a-tugi_iti,b] = SteppingB_0[a,4-b];
+            Stepping_L[a-tugi_iti,b] = SteppingF_0[a,4-b];
             }
         }
 */
