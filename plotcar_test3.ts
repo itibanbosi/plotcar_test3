@@ -308,7 +308,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    tugi_iti=(step_number+tugi_iti)%4;
+    tugi_iti=(step_number+1)%4;
 
 }
 
