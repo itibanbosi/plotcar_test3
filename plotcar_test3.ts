@@ -44,7 +44,7 @@ let Stepping = [
   [0,0,0,0],
   ];
 
-let Stepping0 = [
+let Stepping_non = [
   [0,0,0,0],
   [0,0,0,0],
   [0,0,0,0],
@@ -172,10 +172,11 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     /*右ステッピングの処理*/
     switch (R_zengo) {
       case 0:
-        Stepping_R = Stepping0;
+        Stepping_R = Stepping_non;
         break;
       case 2:
         Stepping_R=SteppingF_0
+
 /*
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
@@ -185,7 +186,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
         break;
       case 1:
-        Stepping_R=SteppingF_0
+        Stepping_R=SteppingB_0
+
 /*
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
@@ -199,10 +201,12 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     /*左ステッピングの処理*/
     switch (L_zengo) {
       case 0:
-            Stepping_L = Stepping0;
+            Stepping_L = Stepping_non;
         break;
+
       case 2:
         Stepping_L=SteppingF_0
+
 /*        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
             Stepping_L[a-tugi_iti,b] = SteppingB_0[a,4-b];
@@ -211,6 +215,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
         break;
       case 1:
+
+        Stepping_L=SteppingB_0
 /*
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
