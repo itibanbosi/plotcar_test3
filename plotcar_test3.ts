@@ -155,25 +155,29 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
         break;
     }
-
+        Stepping_L=SteppingF_0
     /*左ステッピングの処理*/
     switch (L_zengo) {
       case 0:
             Stepping_L = Stepping0;
         break;
       case 2:
-        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
+        Stepping_L=SteppingF_0
+/*        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
             Stepping_L[a-tugi_iti,b] = Stepping1[a,4-b];
             }
         }
+*/
         break;
       case 1:
+/*
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
                 Stepping_L[a-tugi_iti,b] = Stepping1[a,b];
             }
         }
+*/
         break;
     }
     serial.writeValue("tugi_iti",tugi_iti);
