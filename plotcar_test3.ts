@@ -175,7 +175,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         Stepping_R = Stepping_non;
         break;
       case 2:
-        if (tugi_iti=0){
+        if (tugi_iti = 0){
         Stepping_R=SteppingF_0
         }
         if (tugi_iti=1){
@@ -222,6 +222,9 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     /*左ステッピングの処理*/
     switch (L_zengo) {
       case 0:
+          Stepping_L = Stepping_non;
+
+      case 2:
         if (tugi_iti=0){
         Stepping_L=SteppingF_0
         }
@@ -235,8 +238,14 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         Stepping_L=SteppingF_3
         }
         break;
+/*        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
+            for (let b=0 ; b<4 ;b++){
+            Stepping_L[a-tugi_iti,b] = SteppingB_0[a,4-b];
+            }
+        }
+*/
 
-      case 2:
+      case 1:
         if (tugi_iti=0){
         Stepping_L=SteppingB_0
         }
@@ -249,16 +258,6 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         if (tugi_iti=3){
         Stepping_L=SteppingB_3
         }
-/*        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
-            for (let b=0 ; b<4 ;b++){
-            Stepping_L[a-tugi_iti,b] = SteppingB_0[a,4-b];
-            }
-        }
-*/
-        break;
-      case 1:
-
-        Stepping_L=SteppingF_0
 /*
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
@@ -268,7 +267,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
         break;
     }
-    serial.writeValue("tugi_iti",tugi_iti);
+ 
     　　　
     /*  整数部の処理　 */ 
     for (let index = 0; index < kyori_seisuu; index++) {
@@ -308,8 +307,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    tugi_iti=(step_number+1)%4;
 
+    serial.writeValue("tugi_iti", tugi_iti);
 }
 
   //% color="#ff3d03" weight=90 blockId=auto_led_off block="ﾏｲｸﾛﾋﾞｯﾄのLEDを |%Matrix_LED| にする" group="1 初期設定"
