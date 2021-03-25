@@ -309,7 +309,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    Tugi = Tugi + Step_number;
+    Tugi = (Tugi + Step_number)%4;
     serial.writeValue("step_number", Step_number);
 
 }
