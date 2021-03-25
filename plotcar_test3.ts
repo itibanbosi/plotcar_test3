@@ -177,6 +177,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         }
         break;
       case 1:
+
         if (Tugi==0){
         Stepping_R=SteppingB_0
         }
@@ -281,7 +282,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    Tugi = (Tugi + Step_number)%4;
+    Tugi = (Tugi + Step_number + 1)%4;
     serial.writeValue("step_number", Step_number);
 
 }
