@@ -1,6 +1,8 @@
 let wait = 0;
 let  Tugi=0;
 let T1=0;
+let Premotion_R=0;
+let Premotion_L=0;
 
 enum pen_onoff {
   up,
@@ -166,6 +168,13 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     let kyori_seisuu=Math.floor(kyori);
     serial.writeValue("kyori_seisuu", kyori_seisuu);
     let T1=Tugi;
+  /* 前回の動作との比較と処理  */
+    if (Premotion_R == R_zengo){ 
+        Tugi=Tugi+1;
+    }
+    if (Premotion_L==L_zengo){ 
+        Tugi=Tugi+1
+    }    
 
     /*右ステッピングの処理*/
     switch (R_zengo) {
@@ -282,8 +291,10 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    Tugi = (Tugi + Step_number )%4;
+    Tugi = (Tugi + Step_number-1 )%4;
     serial.writeValue("step_number", Step_number);
+    Premotion_R=R_zengo;
+    Premotion_L=L_zengo;
 
 }
 
