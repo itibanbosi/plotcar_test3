@@ -175,7 +175,18 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         Stepping_R = Stepping_non;
         break;
       case 2:
+        if (tugi_iti=0){
         Stepping_R=SteppingF_0
+        }
+        if (tugi_iti=1){
+        Stepping_R=SteppingF_1
+        }
+        if (tugi_iti=2){
+        Stepping_R=SteppingF_2
+        }
+        if (tugi_iti=3){
+        Stepping_R=SteppingF_3
+        }
 
 /*
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
@@ -186,8 +197,18 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
         break;
       case 1:
+        if (tugi_iti=0){
         Stepping_R=SteppingB_0
-
+        }
+        if (tugi_iti=1){
+        Stepping_R=SteppingB_1
+        }
+        if (tugi_iti=2){
+        Stepping_R=SteppingB_2
+        }
+        if (tugi_iti=3){
+        Stepping_R=SteppingB_3
+        }
 /*
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
