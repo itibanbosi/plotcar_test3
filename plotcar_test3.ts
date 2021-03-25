@@ -175,7 +175,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         Tugi_R=Tugi_R;
     }
     if (PremotionR < R_zengo){ 
-        Tugi_R=Tugi_R;
+        Tugi_R=Tugi_R-1;
     }
     if (PremotionR > R_zengo){ 
         Tugi_R=Tugi_R;
