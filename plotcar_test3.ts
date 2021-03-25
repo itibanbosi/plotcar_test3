@@ -175,28 +175,6 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         if ( Tugi == 0){
         Stepping_R=SteppingF_0
         }
-
-      case 2:
-        if ( Tugi == 0){
-        Stepping_R=SteppingF_0
-        }
-        if ( Tugi ==1){
-        Stepping_R=SteppingF_1
-        }
-        if ( Tugi ==2){
-        Stepping_R=SteppingF_2
-        }
-        if ( Tugi ==3){
-        Stepping_R=SteppingF_3
-        }
-
-/*
-        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
-            for (let b=0 ; b<4 ;b++){
-            Stepping_R[a-tugi_iti,b] = SteppingF_1[a,b];
-            }
-        }
-*/
         break;
       case 1:
         if (Tugi==0){
@@ -211,22 +189,30 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         if (Tugi==3){
         Stepping_R=SteppingB_3
         }
-/*
-        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
-            for (let b=0 ; b<4 ;b++){
-            Stepping_R[a-tugi_iti,b] = SteppingB_1[a,4-b];
-            }
-        }
-*/
         break;
+      case 2:
+        if ( Tugi == 0){
+        Stepping_R=SteppingF_0
+        }
+        if ( Tugi ==1){
+        Stepping_R=SteppingF_1
+        }
+        if ( Tugi ==2){
+        Stepping_R=SteppingF_2
+        }
+        if ( Tugi ==3){
+        Stepping_R=SteppingF_3
+        }
+        break;
+
     }
         Stepping_L=SteppingF_0
     /*左ステッピングの処理*/
     switch (L_zengo) {
       case 0:
           Stepping_L = Stepping_non;
-
-      case 2:
+        break;
+     case 1:
         if (Tugi==0){
         Stepping_L=SteppingF_0
         }
@@ -240,14 +226,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         Stepping_L=SteppingF_3
         }
         break;
-/*        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
-            for (let b=0 ; b<4 ;b++){
-            Stepping_L[a-tugi_iti,b] = SteppingB_0[a,4-b];
-            }
-        }
-*/
-
-      case 1:
+      case 2:
         if (Tugi==0){
         Stepping_L=SteppingB_0
         }
@@ -260,13 +239,6 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         if (Tugi==3){
         Stepping_L=SteppingB_3
         }
-/*
-        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
-            for (let b=0 ; b<4 ;b++){
-                Stepping_L[a-tugi_iti,b] = SteppingF_0[a,b];
-            }
-        }
-*/
         break;
     }
  
