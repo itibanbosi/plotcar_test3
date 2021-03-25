@@ -137,14 +137,14 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       case 2:
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
-            Stepping_R[a-tugi_iti,b] = Stepping1[a,b];
+            Stepping_R[a-tugi_iti,b] = SteppingF_2[a,b];
             }
         }
         break;
       case 1:
         for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
-            Stepping_R[a-tugi_iti,b] = Stepping1[a,4-b];
+            Stepping_R[a-tugi_iti,b] = SteppingF_2[a,4-b];
             }
         }
         break;
