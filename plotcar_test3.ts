@@ -175,16 +175,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         Stepping_R = Stepping_non;
         break;
       case 2:
-        if (tugi_iti = 0){
+        if (tugi_iti == 0){
         Stepping_R=SteppingF_0
         }
-        if (tugi_iti=1){
+        if (tugi_iti==1){
         Stepping_R=SteppingF_1
         }
-        if (tugi_iti=2){
+        if (tugi_iti==2){
         Stepping_R=SteppingF_2
         }
-        if (tugi_iti=3){
+        if (tugi_iti==3){
         Stepping_R=SteppingF_3
         }
 
@@ -197,16 +197,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
         break;
       case 1:
-        if (tugi_iti=0){
+        if (tugi_iti==0){
         Stepping_R=SteppingB_0
         }
-        if (tugi_iti=1){
+        if (tugi_iti==1){
         Stepping_R=SteppingB_1
         }
-        if (tugi_iti=2){
+        if (tugi_iti==2){
         Stepping_R=SteppingB_2
         }
-        if (tugi_iti=3){
+        if (tugi_iti==3){
         Stepping_R=SteppingB_3
         }
 /*
@@ -225,16 +225,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
           Stepping_L = Stepping_non;
 
       case 2:
-        if (tugi_iti=0){
+        if (tugi_iti==0){
         Stepping_L=SteppingF_0
         }
-        if (tugi_iti=1){
+        if (tugi_iti==1){
         Stepping_L=SteppingF_1
         }
-        if (tugi_iti=2){
+        if (tugi_iti==2){
         Stepping_L=SteppingF_2
         }
-        if (tugi_iti=3){
+        if (tugi_iti==3){
         Stepping_L=SteppingF_3
         }
         break;
@@ -246,16 +246,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
 
       case 1:
-        if (tugi_iti=0){
+        if (tugi_iti==0){
         Stepping_L=SteppingB_0
         }
-        if (tugi_iti=1){
+        if (tugi_iti==1){
         Stepping_L=SteppingB_1
         }
-        if (tugi_iti=2){
+        if (tugi_iti==2){
         Stepping_L=SteppingB_2
         }
-        if (tugi_iti=3){
+        if (tugi_iti==3){
         Stepping_L=SteppingB_3
         }
 /*
