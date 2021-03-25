@@ -1,8 +1,8 @@
 let wait = 0;
 let  Tugi=0;
 let T1=0;
-let Premotion_R=0;
-let Premotion_L=0;
+let  PremotionR :number;
+let  PremotionL :number;
 
 enum pen_onoff {
   up,
@@ -160,20 +160,22 @@ namespace eureka_plotter_car {
 function  moter(kyori:number,R_zengo:number,L_zengo:number){
     led.enable(false);
     let i=0;
-
     /* 端数の計算計算  */
 
     let kyori_hasuu=kyori%1;
     serial.writeValue("kyori_hasuu", kyori_hasuu);
     let kyori_seisuu=Math.floor(kyori);
     serial.writeValue("kyori_seisuu", kyori_seisuu);
-    let T1=Tugi;
+/*    let T1=Tugi;   */
+
   /* 前回の動作との比較と処理  */
-    if (Premotion_R == R_zengo){ 
+
+    if (PremotionR == R_zengo){ 
         Tugi=Tugi+1;
     }
-    if (Premotion_L==L_zengo){ 
-        Tugi=Tugi+1
+
+    if (PremotionL == L_zengo){ 
+        Tugi=Tugi+1;
     }    
 
     /*右ステッピングの処理*/
@@ -293,8 +295,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       }
     Tugi = (Tugi + Step_number-1 )%4;
     serial.writeValue("step_number", Step_number);
-    Premotion_R=R_zengo;
-    Premotion_L=L_zengo;
+    PremotionR = R_zengo;
+    PremotionL = L_zengo;
 
 }
 
