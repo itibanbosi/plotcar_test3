@@ -180,7 +180,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     if (PremotionR > R_zengo){ 
         Tugi_R=Tugi_R-1;
     }
-   
+
+    if (PremotionL == L_zengo){ 
+        Tugi_L=Tugi_L;
+    }
+    if (PremotionL < L_zengo){ 
+        Tugi_L=Tugi_L-1;
+    }
+    if (PremotionL > L_zengo){ 
+        Tugi_L=Tugi_L-1;
+    }   
 
     /*右ステッピングの処理*/
     switch (R_zengo) {
