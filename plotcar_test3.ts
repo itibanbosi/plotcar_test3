@@ -1,5 +1,6 @@
 let wait = 0;
-let  Tugi=0;
+let  Tugi_R=0;
+let Tugi_L=0;
 let T1=0;
 let  PremotionR :number;
 let  PremotionL :number;
@@ -166,16 +167,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     serial.writeValue("kyori_hasuu", kyori_hasuu);
     let kyori_seisuu=Math.floor(kyori);
     serial.writeValue("kyori_seisuu", kyori_seisuu);
-/*    let T1=Tugi;   */
+
 
   /* 前回の動作との比較と処理  */
 
     if (PremotionR == R_zengo){ 
-        Tugi=Tugi+1;
+        Tugi_R=Tugi_R+1;
     }
 
     if (PremotionL == L_zengo){ 
-        Tugi=Tugi+1;
+        Tugi_R=Tugi_R+1;
     }    
 
     /*右ステッピングの処理*/
@@ -183,36 +184,36 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       case 0:
         Stepping_R = Stepping_non;
         break;
-        if ( Tugi == 0){
+        if ( Tugi_R == 0){
         Stepping_R=SteppingF_0
         }
         break;
       case 1:
 
-        if (Tugi==0){
+        if (Tugi_R==0){
         Stepping_R=SteppingB_0
         }
-        if (Tugi==1){
+        if (Tugi_R==1){
         Stepping_R=SteppingB_1
         }
-        if (Tugi==2){
+        if (Tugi_R==2){
         Stepping_R=SteppingB_2
         }
-        if (Tugi==3){
+        if (Tugi_R==3){
         Stepping_R=SteppingB_3
         }
         break;
       case 2:
-        if ( Tugi == 0){
+        if ( Tugi_R == 0){
         Stepping_R=SteppingF_0
         }
-        if ( Tugi ==1){
+        if ( Tugi_R ==1){
         Stepping_R=SteppingF_1
         }
-        if ( Tugi ==2){
+        if ( Tugi_R ==2){
         Stepping_R=SteppingF_2
         }
-        if ( Tugi ==3){
+        if ( Tugi_R ==3){
         Stepping_R=SteppingF_3
         }
         break;
@@ -225,30 +226,30 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
           Stepping_L = Stepping_non;
         break;
      case 1:
-        if (Tugi==0){
+        if (Tugi_L==0){
         Stepping_L=SteppingF_0
         }
-        if (Tugi==1){
+        if (Tugi_L==1){
         Stepping_L=SteppingF_1
         }
-        if (Tugi==2){
+        if (Tugi_L==2){
         Stepping_L=SteppingF_2
         }
-        if (Tugi==3){
+        if (Tugi_L==3){
         Stepping_L=SteppingF_3
         }
         break;
       case 2:
-        if (Tugi==0){
+        if (Tugi_L==0){
         Stepping_L=SteppingB_0
         }
-        if (Tugi==1){
+        if (Tugi_L==1){
         Stepping_L=SteppingB_1
         }
-        if (Tugi==2){
+        if (Tugi_L==2){
         Stepping_L=SteppingB_2
         }
-        if (Tugi==3){
+        if (Tugi_L==3){
         Stepping_L=SteppingB_3
         }
         break;
@@ -293,7 +294,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    Tugi = (Tugi + Step_number-1 )%4;
+    Tugi_R = (Tugi_R + Step_number)%4;
+    Tugi_L = (Tugi_L + Step_number)%4;
     serial.writeValue("step_number", Step_number);
     PremotionR = R_zengo;
     PremotionL = L_zengo;
