@@ -307,8 +307,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-
-    serial.writeValue("tugi_iti", tugi_iti);
+/*    let tugi_iti = tugi_iti + step_number;   */
+    serial.writeValue("step_number", step_number);
 }
 
   //% color="#ff3d03" weight=90 blockId=auto_led_off block="ﾏｲｸﾛﾋﾞｯﾄのLEDを |%Matrix_LED| にする" group="1 初期設定"
