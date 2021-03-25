@@ -310,7 +310,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         microbit_wait=10000;
         break;       
         case microbit_version.Test_B:
-        microbit_wait=20000;
+        microbit_wait=40000;
         break;       
     }
   }
