@@ -366,30 +366,30 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   }
 
   //% color="#3943c6" weight=55　blockId=plottercar_R_step
-  //% block="右車輪　 ４×|%R_step|ステップ |%houkou|方向" group="3　基本の動き"
+  //% block="右車輪　|%R_step|ステップ |%houkou|方向" group="3　基本の動き"
 
   export function plottercar_R_step(R_step: number,houkou:plotter_houkou): void {
     moter_number= R_step;
         switch(houkou){
         case plotter_houkou.前:
-            moter(R_step,1,0);
+            moter(R_step/4,1,0);
         return;   
         case plotter_houkou.後:
-            moter(R_step,2,0);      
+            moter(R_step/4,2,0);      
         return;
     }
 }
   //% color="#3943c6" weight=58　blockId=plottercar_L_step
-  //% block="左車輪　 ４×|%L_step|ステップ |%houkou|方向" group="3　基本の動き"
+  //% block="左車輪 |%L_step|ステップ |%houkou|方向" group="3　基本の動き"
 
   export function plottercar_L_step(L_step: number,houkou:plotter_houkou): void {
     moter_number= L_step;
         switch(houkou){
         case plotter_houkou.前:
-            moter(L_step,0,1); 
+            moter(L_step/4,0,1); 
         return;   
         case plotter_houkou.後:
-            moter(L_step,0,2);    
+            moter(L_step/4,0,2);    
         return;
     }
 } 
