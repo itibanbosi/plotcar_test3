@@ -1,8 +1,6 @@
 let wait = 0;
-let hasuu_mae;
-let hasuu_ato;
-let tugi_iti=0;
-
+let  Tugi=0;
+let T1=0;
 
 enum pen_onoff {
   up,
@@ -167,24 +165,28 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     serial.writeValue("kyori_hasuu", kyori_hasuu);
     let kyori_seisuu=Math.floor(kyori);
     serial.writeValue("kyori_seisuu", kyori_seisuu);
-
+    let T1=Tugi;
 
     /*右ステッピングの処理*/
     switch (R_zengo) {
       case 0:
         Stepping_R = Stepping_non;
         break;
-      case 2:
-        if (tugi_iti == 0){
+        if ( Tugi == 0){
         Stepping_R=SteppingF_0
         }
-        if (tugi_iti==1){
+
+      case 2:
+        if ( Tugi == 0){
+        Stepping_R=SteppingF_0
+        }
+        if ( Tugi ==1){
         Stepping_R=SteppingF_1
         }
-        if (tugi_iti==2){
+        if ( Tugi ==2){
         Stepping_R=SteppingF_2
         }
-        if (tugi_iti==3){
+        if ( Tugi ==3){
         Stepping_R=SteppingF_3
         }
 
@@ -197,16 +199,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
         break;
       case 1:
-        if (tugi_iti==0){
+        if (Tugi==0){
         Stepping_R=SteppingB_0
         }
-        if (tugi_iti==1){
+        if (Tugi==1){
         Stepping_R=SteppingB_1
         }
-        if (tugi_iti==2){
+        if (Tugi==2){
         Stepping_R=SteppingB_2
         }
-        if (tugi_iti==3){
+        if (Tugi==3){
         Stepping_R=SteppingB_3
         }
 /*
@@ -225,16 +227,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
           Stepping_L = Stepping_non;
 
       case 2:
-        if (tugi_iti==0){
+        if (Tugi==0){
         Stepping_L=SteppingF_0
         }
-        if (tugi_iti==1){
+        if (Tugi==1){
         Stepping_L=SteppingF_1
         }
-        if (tugi_iti==2){
+        if (Tugi==2){
         Stepping_L=SteppingF_2
         }
-        if (tugi_iti==3){
+        if (Tugi==3){
         Stepping_L=SteppingF_3
         }
         break;
@@ -246,16 +248,16 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 */
 
       case 1:
-        if (tugi_iti==0){
+        if (Tugi==0){
         Stepping_L=SteppingB_0
         }
-        if (tugi_iti==1){
+        if (Tugi==1){
         Stepping_L=SteppingB_1
         }
-        if (tugi_iti==2){
+        if (Tugi==2){
         Stepping_L=SteppingB_2
         }
-        if (tugi_iti==3){
+        if (Tugi==3){
         Stepping_L=SteppingB_3
         }
 /*
@@ -290,9 +292,9 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     }
 
    /* 端数分の進み方と処理  */
-　  let step_number=Math.floor(kyori_hasuu*10/2.5);
+　  let Step_number=Math.floor(kyori_hasuu*10/2.5);
     let Data1=0;
-    while ( Data1 < step_number){
+    while ( Data1 < Step_number){
       serial.writeValue("Data1", Data1);
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
@@ -307,8 +309,9 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-/*    let tugi_iti = tugi_iti + step_number;   */
-    serial.writeValue("step_number", step_number);
+    Tugi = Tugi + Step_number;
+    serial.writeValue("step_number", Step_number);
+
 }
 
   //% color="#ff3d03" weight=90 blockId=auto_led_off block="ﾏｲｸﾛﾋﾞｯﾄのLEDを |%Matrix_LED| にする" group="1 初期設定"
