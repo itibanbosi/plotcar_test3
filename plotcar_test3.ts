@@ -222,12 +222,33 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     /*左ステッピングの処理*/
     switch (L_zengo) {
       case 0:
-            Stepping_L = Stepping_non;
+        if (tugi_iti=0){
+        Stepping_L=SteppingF_0
+        }
+        if (tugi_iti=1){
+        Stepping_L=SteppingF_1
+        }
+        if (tugi_iti=2){
+        Stepping_L=SteppingF_2
+        }
+        if (tugi_iti=3){
+        Stepping_L=SteppingF_3
+        }
         break;
 
       case 2:
+        if (tugi_iti=0){
         Stepping_L=SteppingB_0
-
+        }
+        if (tugi_iti=1){
+        Stepping_L=SteppingB_1
+        }
+        if (tugi_iti=2){
+        Stepping_L=SteppingB_2
+        }
+        if (tugi_iti=3){
+        Stepping_L=SteppingB_3
+        }
 /*        for (let a=tugi_iti ; a<4+tugi_iti ; a++) {
             for (let b=0 ; b<4 ;b++){
             Stepping_L[a-tugi_iti,b] = SteppingB_0[a,4-b];
