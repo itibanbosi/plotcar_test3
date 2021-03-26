@@ -297,7 +297,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
    /* 端数分の進み方と処理  */
 　  let Step_number=Math.floor(kyori_hasuu*10/2.5);
     let Data1=0;
-    while ( Data1 <= Step_number){
+    while ( Data1 < Step_number){
       serial.writeValue("Data1", Data1);
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
@@ -313,8 +313,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       }
       }
     
-        Tugi_L=(Tugi_L + Data1-2)%4; 
-        Tugi_R = (Tugi_R + Data1-2)%4;
+        Tugi_L=(Tugi_L + Data1-1)%4; 
+        Tugi_R = (Tugi_R + Data1-1)%4;
     serial.writeValue("step_number", Step_number);
     PremotionR = R_zengo;
     PremotionL = L_zengo;
