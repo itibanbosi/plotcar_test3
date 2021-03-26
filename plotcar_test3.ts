@@ -188,8 +188,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
 
    /*   次のステップ*/ 
-    Tugi_L=Tugi_L+1;
-    Tugi_R=Tugi_R+1;
+    Tugi_L=Tugi_L;
+    Tugi_R=Tugi_R;
     
     /*右ステッピングの処理*/
     switch (R_zengo) {
