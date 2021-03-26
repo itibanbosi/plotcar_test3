@@ -193,8 +193,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
    serial.writeValue("2Tugi_L", Tugi_L);
 
    /*   次のステップ*/ 
-    Tugi_L=(Tugi_L+1)%4;
-    Tugi_R=(Tugi_R+1)%4;
+    Tugi_L=(Tugi_L)%4;
+    Tugi_R=(Tugi_R)%4;
  
     serial.writeValue("3Tugi_L", Tugi_L);    
     /*右ステッピングの処理*/
