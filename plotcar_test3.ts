@@ -174,23 +174,39 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     if (PremotionR == R_zengo){ 
         Tugi_R=Tugi_R;
     }
-    if (PremotionR < R_zengo){ 
-        Tugi_R=Tugi_R-1;
+    if (PremotionR != R_zengo && Tugi_R==0){ 
+        Tugi_R=3;
     }
-    if (PremotionR > R_zengo){ 
-        Tugi_R=Tugi_R-1;
+    if (PremotionR != R_zengo && Tugi_R==1){ 
+        Tugi_R=2;
     }
-
+    if (PremotionR != R_zengo && Tugi_R==2){ 
+        Tugi_R=1;
+    }
+    if (PremotionR != R_zengo && Tugi_R==3){ 
+        Tugi_R=0;
+    }
+    
     if (PremotionL == L_zengo){ 
         Tugi_L=Tugi_L+1;
     }
-    if (PremotionL < L_zengo){ 
-        Tugi_L=Tugi_L+1;
+    if (PremotionL != L_zengo && Tugi_L==0){ 
+        Tugi_R=3;
     }
-    if (PremotionL > L_zengo){ 
-        Tugi_L=Tugi_L;
-    }   
+    if (PremotionL != L_zengo && Tugi_L==1){ 
+        Tugi_R=2;
+    }
+    if (PremotionL != L_zengo && Tugi_L==2){ 
+        Tugi_R=1;
+    }
+    if (PremotionL != L_zengo && Tugi_L==3){ 
+        Tugi_R=0;
+    }
 
+   /*   次のステップ*/ 
+    Tugi_L=Tugi_L+1;
+    Tugi_R=Tugi_R+1;
+    
     /*右ステッピングの処理*/
     switch (R_zengo) {
       case 0:
@@ -306,13 +322,9 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       {
       }
       }
-    if (L_zengo <= PremotionL && L_zengo == 1){
-         Tugi_L=(Tugi_L + Step_number)%4;
-    }
-    if (L_zengo > PremotionL && L_zengo == 1){
-         Tugi_L=(Tugi_L - Step_number)%4;
-    }  
-    Tugi_R = (Tugi_R + Step_number)%4;
+    
+        Tugi_L=(Tugi_L + Step_number)%4; 
+        Tugi_R = (Tugi_R + Step_number)%4;
     serial.writeValue("step_number", Step_number);
     PremotionR = R_zengo;
     PremotionL = L_zengo;
