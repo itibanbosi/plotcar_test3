@@ -291,7 +291,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
    /* 端数分の進み方と処理  */
 　  let Step_number=Math.floor(kyori_hasuu*10/2.5);
-    let Data1=1;
+    let Data1=0;
     while ( Data1 <= Step_number){
       serial.writeValue("Data1", Data1);
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
