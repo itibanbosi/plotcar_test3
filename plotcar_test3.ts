@@ -172,13 +172,13 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   /* 前回の動作との比較と処理  */
    serial.writeValue("1Tugi_L", Tugi_L);
     if (PremotionR == R_zengo){ 
-        Tugi_R=Tugi_R;
+        Tugi_R=Tugi_R+1;
     }
     if (PremotionR > R_zengo  ){ 
-        Tugi_R=3-Tugi_R;
+        Tugi_R=3-Tugi_R+1;
     }
     if (PremotionR < R_zengo  ){ 
-        Tugi_R=3-Tugi_R;
+        Tugi_R=3-Tugi_R+1;
     }
     
     if (PremotionL == L_zengo){ 
