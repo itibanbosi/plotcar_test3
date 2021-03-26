@@ -307,8 +307,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       }
       }
     
-        Tugi_L=(Tugi_L + Step_number)%4; 
-        Tugi_R = (Tugi_R + Step_number)%4;
+        Tugi_L=(Tugi_L + Data1)%4; 
+        Tugi_R = (Tugi_R + Data1)%4;
     serial.writeValue("step_number", Step_number);
     PremotionR = R_zengo;
     PremotionL = L_zengo;
