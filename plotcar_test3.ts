@@ -312,7 +312,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     serial.writeValue("step_number", Step_number);
     PremotionR = R_zengo;
     PremotionL = L_zengo;
-
+    serial.writeValue("PromotionL", L_zengo);
+    serial.writeValue("L_zengo", L_zengo);
 }
 
   //% color="#ff3d03" weight=90 blockId=auto_led_off block="ﾏｲｸﾛﾋﾞｯﾄのLEDを |%Matrix_LED| にする" group="1 初期設定"
