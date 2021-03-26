@@ -188,8 +188,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
 
    /*   次のステップ*/ 
-    Tugi_L=Tugi_L;
-    Tugi_R=Tugi_R;
+    Tugi_L=Tugi_L+1;
+    Tugi_R=Tugi_R+1;
     
     /*右ステッピングの処理*/
     switch (R_zengo) {
@@ -307,8 +307,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       }
       }
     
-        Tugi_L=(Tugi_L + Data1)%4; 
-        Tugi_R = (Tugi_R + Data1)%4;
+        Tugi_L=(Tugi_L + Data1+1)%4; 
+        Tugi_R = (Tugi_R + Data1+1)%4;
     serial.writeValue("step_number", Step_number);
     PremotionR = R_zengo;
     PremotionL = L_zengo;
