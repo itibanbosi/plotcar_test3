@@ -174,34 +174,18 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     if (PremotionR == R_zengo){ 
         Tugi_R=Tugi_R;
     }
-    if (PremotionR != R_zengo && Tugi_R==0){ 
-        Tugi_R=3;
+    if (PremotionR != R_zengo ){ 
+        Tugi_R=3-Tugi_R;
     }
-    if (PremotionR != R_zengo && Tugi_R==1){ 
-        Tugi_R=2;
-    }
-    if (PremotionR != R_zengo && Tugi_R==2){ 
-        Tugi_R=1;
-    }
-    if (PremotionR != R_zengo && Tugi_R==3){ 
-        Tugi_R=0;
-    }
+
     
     if (PremotionL == L_zengo){ 
         Tugi_L=Tugi_L+1;
     }
-    if (PremotionL != L_zengo && Tugi_L==0){ 
-        Tugi_R=3;
+    if (PremotionL != L_zengo ){ 
+        Tugi_R=3-Tugi_R;
     }
-    if (PremotionL != L_zengo && Tugi_L==1){ 
-        Tugi_R=2;
-    }
-    if (PremotionL != L_zengo && Tugi_L==2){ 
-        Tugi_R=1;
-    }
-    if (PremotionL != L_zengo && Tugi_L==3){ 
-        Tugi_R=0;
-    }
+
 
    /*   次のステップ*/ 
     Tugi_L=Tugi_L+1;
@@ -306,7 +290,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
    /* 端数分の進み方と処理  */
 　  let Step_number=Math.floor(kyori_hasuu*10/2.5);
-    let Data1=0;
+    let Data1=1;
     while ( Data1 < Step_number){
       serial.writeValue("Data1", Data1);
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
