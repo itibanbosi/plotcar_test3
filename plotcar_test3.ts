@@ -180,7 +180,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
     
     if (PremotionL == L_zengo){ 
-        Tugi_L=Tugi_L+1;
+        Tugi_L=Tugi_L;
     }
     if (PremotionL != L_zengo ){ 
         Tugi_R=3-Tugi_R;
