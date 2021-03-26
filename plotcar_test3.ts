@@ -166,7 +166,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     let kyori_hasuu=kyori%1;
     serial.writeValue("kyori_hasuu", kyori_hasuu);
     let kyori_seisuu=Math.floor(kyori);
-    serial.writeValue("kyori_seisuu", kyori_seisuu);
+/*    serial.writeValue("kyori_seisuu", kyori_seisuu);*/
 
 
   /* 前回の動作との比較と処理  */
@@ -190,6 +190,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
    /*   次のステップ*/ 
     Tugi_L=(Tugi_L+1)%3;
     Tugi_R=(Tugi_R+1)%3;
+ 
     serial.writeValue("3Tugi_L", Tugi_L);    
     /*右ステッピングの処理*/
     switch (R_zengo) {
