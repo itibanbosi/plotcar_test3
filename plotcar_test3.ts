@@ -183,7 +183,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         Tugi_L=Tugi_L;
     }
     if (PremotionL != L_zengo ){ 
-        Tugi_R=3-Tugi_R;
+        Tugi_L=3-Tugi_L;
     }
 
 
