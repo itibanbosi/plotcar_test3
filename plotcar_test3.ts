@@ -4,6 +4,8 @@ let Tugi_L=0;
 let T1=0;
 let  PremotionR=0 ;
 let  PremotionL=0 ;
+let con_kaiten=1.615;
+
 
 enum pen_onoff {
   up,
@@ -385,14 +387,14 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   //% color="#3943c6" weight=76　blockId=plottercar_L_cycle
   //% block="左回り　角度 |%L_degree| " group="3　基本の動き"
   export function plottercar_L_cycle(L_degree: number): void {
-    moter_number= L_degree / 360 * 512 * 1.62*cond_degree;
+    moter_number= L_degree / 360 * 512 * con_kaiten*cond_degree;
     moter(moter_number,1,2);
    }
  
   //% color="#3943c6" weight=74　blockId=plottercar_R_cycle
   //% block="右回り　角度 |%R_degree| " group="3　基本の動き"
   export function plottercar_R_cycle(R_degree: number): void {
-    moter_number= R_degree / 360 * 512 * 1.62*cond_degree;
+    moter_number= R_degree / 360 * 512 * con_kaiten*cond_degree;
     moter(moter_number,2,1);
   }
 
