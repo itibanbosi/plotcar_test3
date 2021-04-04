@@ -164,10 +164,10 @@ namespace eureka_plotter_car {
   export function microbit_version_info(Version_info : microbit_version) {
     switch(Version_info){
         case microbit_version.Version1:
-        microbit_wait=800;
+        microbit_wait=900;
         break;
         case microbit_version.Version2:
-        microbit_wait=6000;
+        microbit_wait=5000;
         break;
         case microbit_version.Test_A:
         microbit_wait=10000;
