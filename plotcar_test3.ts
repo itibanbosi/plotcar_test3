@@ -448,10 +448,10 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   //% block="円の作図 直径 |%D_Num| cm " group="4　図形"
   export function cycle(D_Num:number): void {
     let cir = D_Num * 3.14
-    let Foward_D =  cir/ 60
-    for (let index = 0; index < 60; index++) {
+    let Foward_D =  cir/ 30
+    for (let index = 0; index < 30; index++) {
         eureka_plotter_car.plottercar_1sou_forward(Foward_D)
-        eureka_plotter_car.plottercar_R_cycle(360 / 60)
+        eureka_plotter_car.plottercar_R_cycle(360 / 30)
     }
   }
 
