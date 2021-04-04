@@ -4,7 +4,7 @@ let Tugi_L=0;
 let T1=0;
 let  PremotionR=0 ;
 let  PremotionL=0 ;
-let con_kaiten=1.6181;
+let con_kaiten=1.6183;
 
 
 enum pen_onoff {
