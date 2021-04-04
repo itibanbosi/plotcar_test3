@@ -158,6 +158,26 @@ let moter_number=0;
 //% color="#3943c6" block="ﾌﾟﾛｯﾀｰ・ｶｰVer1.5" icon="\uf1b9"
 namespace eureka_plotter_car {
 
+  //% color="#ff3d03" weight=90 blockId=Microbit_Version_info block="ﾏｲｸﾛﾋﾞｯﾄのバージョンを設定する |%Version_info| にする" group="1 初期設定"
+  export function microbit_version_info(Version_info : microbit_version) {
+    switch(Version_info){
+        case microbit_version.Version1:
+        microbit_wait=2000;
+        break;
+        case microbit_version.Version2:
+        microbit_wait=7000;
+        break;
+        case microbit_version.Test_A:
+        microbit_wait=10000;
+        break;       
+        case microbit_version.Test_B:
+        microbit_wait=90000;
+        break;       
+    }
+  }
+
+
+
 function  moter(kyori:number,R_zengo:number,L_zengo:number){
     led.enable(false);
     let i=0;
@@ -333,23 +353,6 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     }
   }
 
-  //% color="#ff3d03" weight=90 blockId=Microbit_Version_info block="ﾏｲｸﾛﾋﾞｯﾄのバージョンを設定する |%Version_info| にする" group="1 初期設定"
-  export function microbit_version_info(Version_info : microbit_version) {
-    switch(Version_info){
-        case microbit_version.Version1:
-        microbit_wait=1000;
-        break;
-        case microbit_version.Version2:
-        microbit_wait=7000;
-        break;
-        case microbit_version.Test_A:
-        microbit_wait=10000;
-        break;       
-        case microbit_version.Test_B:
-        microbit_wait=90000;
-        break;       
-    }
-  }
 
   //% color="#009CA0" weight=96 blockId=eureka_relay block="ペン |%mode| " group="2 ペンの状態"
   export function plottercar_pen(mode: pen_onoff) {
